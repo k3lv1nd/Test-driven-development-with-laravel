@@ -37,6 +37,17 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         <li><a href="{{ '/threads' }}">Threads</a></li> &nbsp;
+                        <li><a href="{{ '/threads/create' }}"> New Thread</a></li> &nbsp;
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Channels</a>
+                            <ul class="dropdown-menu">
+                                @foreach(App\Channel::all() as $channel)
+                                    <li><a href="/threads/{{$channel->slug}}">{{$channel->name}}</a></li>
+                                    
+                                    @endforeach
+                            </ul>
+                        </li>
+                        &nbsp;
                     </ul>
 
                     <!-- Right Side Of Navbar -->
